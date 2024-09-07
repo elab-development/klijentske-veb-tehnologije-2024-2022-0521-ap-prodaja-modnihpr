@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./css/globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Layout from "@/components/Layout";
 import "slick-carousel/slick/slick.css";
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         <Layout>
           <Header />
           {children}
+          <Footer />
         </Layout>
       </body>
     </html>
