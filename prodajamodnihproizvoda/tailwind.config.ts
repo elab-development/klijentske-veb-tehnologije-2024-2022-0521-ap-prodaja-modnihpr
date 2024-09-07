@@ -9,9 +9,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'main-bg': "url('/bg-img.jpeg')"
+      },
       fontFamily: {
         bodyFont: ["Urbanist", ...defaultTheme.fontFamily.sans],
       },
+      colors:{
+        bodyColor: "#fbfaf7",
+        bgLight: "#1010100d",
+        darkText: "#242424",
+        lightText: "#a5a5a5",
+      }
     },
   },
   plugins: [],
