@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "./Container";
 import Logo from "./Logo";
-import { FiSearch, FiLogOut } from "react-icons/fi";
+import { FiSearch} from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
 import { IoMdCart } from "react-icons/io";
 
