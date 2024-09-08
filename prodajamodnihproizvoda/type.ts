@@ -14,3 +14,13 @@ export interface AllProducts {
 export interface ItemProps {
   item: AllProducts;
 }
+
+export interface StateProps {
+  shopping: {
+    productData: [];
+    userInfo: {};
+    orderData: {
+      order: AllProducts[];
+    };
+  };
+}
