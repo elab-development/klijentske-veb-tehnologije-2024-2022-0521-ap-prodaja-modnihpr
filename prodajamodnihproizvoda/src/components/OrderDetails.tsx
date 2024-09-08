@@ -1,4 +1,5 @@
 "use client";
+
 import { useDispatch, useSelector } from "react-redux";
 import { AllProducts, StateProps } from "../../type";
 import { useEffect, useState } from "react";

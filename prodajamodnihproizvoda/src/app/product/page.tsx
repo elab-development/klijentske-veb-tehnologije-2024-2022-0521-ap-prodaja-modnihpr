@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import { getSingleProudct, getTrendingProducts } from "@/helpers";
 import { AllProducts } from "../../../type";
 import ProductsData from "@/components/ProductsData";
-import SignleProduct from "@/components/SingleProduct";
+import SingleProduct from "@/components/SingleProduct";
 
 type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -17,7 +17,7 @@ const ProductPage = async ({ searchParams }: Props) => {
   return (
     <div>
       <Container>
-        <SignleProduct product={product} />
+        <SingleProduct product={product} />
         <div>
           <p className="text-xl py-1 font-semibold">Trending Products</p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
