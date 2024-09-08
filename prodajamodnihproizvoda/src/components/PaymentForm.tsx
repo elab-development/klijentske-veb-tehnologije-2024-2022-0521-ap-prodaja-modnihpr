@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AllProducts, StateProps } from "../../type";
 import FormattedPrice from "./FormattedPrice";
 import { useEffect, useState } from "react";
+import { loadStripe } from "@stripe/stripe-js";
 import { useSession } from "next-auth/react";
 import { resetCart, saveOrder } from "@/redux/shoppingSlice";
 
@@ -22,8 +23,13 @@ const PaymentForm = () => {
     setTotalAmt(amt);
   }, [productData]);
 
+  // =============  Stripe Payment Start here ==============
+  const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
+  );
   const { data: session } = useSession();
   const handleCheckout = async () => {
+    const stripe = await stripePromise;
     const response = await fetch("http://localhost:3000/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -36,6 +42,7 @@ const PaymentForm = () => {
 
     if (response.ok) {
       await dispatch(saveOrder({ order: productData, id: data.id }));
+      stripe?.redirectToCheckout({ sessionId: data.id });
       dispatch(resetCart());
     } else {
       throw new Error("Failed to create Stripe Payment");
