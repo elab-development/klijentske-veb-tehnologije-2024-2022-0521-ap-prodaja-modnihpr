@@ -1,5 +1,5 @@
 import Container from "@/components/Container";
-import { getSingleProudct, getTrendingProducts } from "@/helpers";
+import { getSingleProduct, getTrendingProducts } from "@/helpers";
 import { AllProducts } from "../../../type";
 import ProductsData from "@/components/ProductsData";
 import SingleProduct from "@/components/SingleProduct";
@@ -11,7 +11,7 @@ type Props = {
 const ProductPage = async ({ searchParams }: Props) => {
   const _idString = searchParams?._id;
   const _id = Number(_idString);
-  const product = getSingleProudct(_id);
+  const product = getSingleProduct(_id);
   const data = await getTrendingProducts();
 
   return (

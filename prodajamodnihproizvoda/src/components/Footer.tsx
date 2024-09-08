@@ -100,12 +100,11 @@ const Footer = () => {
                 About
               </li>
             </Link>
-            <li className="hover:text-orange-500 cursor-pointer duration-200">
-              Newsletter
-            </li>
-            <li className="hover:text-orange-500 cursor-pointer duration-200">
-              Contact
-            </li>
+            <Link href={"/products"}>
+              <li className="hover:text-orange-500 cursor-pointer duration-200">
+                Products
+              </li>
+            </Link>
           </ul>
         </div>
         <div>
